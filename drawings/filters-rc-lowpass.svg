@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="170.29329"
+   height="113.47566"
    id="svg5319"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
@@ -24,11 +24,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="268.70448"
-     inkscape:cy="919.07082"
+     inkscape:zoom="5.6"
+     inkscape:cx="88.211396"
+     inkscape:cy="53.22175"
      inkscape:document-units="px"
-     inkscape:current-layer="g240"
+     inkscape:current-layer="g7037"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:object-paths="true"
@@ -38,7 +38,11 @@
      inkscape:window-height="1026"
      inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5" />
   <metadata
      id="metadata5324">
     <rdf:RDF>
@@ -47,20 +51,22 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0.92642482,2.4028924)">
     <g
        style="fill:none;stroke:#000000;stroke-width:2;font-family:Sans-Serif"
        id="g240"
        transform="translate(284.09653,277.75793)">
       <g
-         id="g7037">
+         id="g7037"
+         transform="translate(-83.571428,-67.857142)">
         <g
            transform="translate(-200.78396,-307.28942)"
            id="g6869">
@@ -301,7 +307,7 @@
              style="font-size:12px;text-align:center;line-height:114.99999762%;text-anchor:middle"
              y="-182.83165"
              x="-128.6422"
-             sodipodi:role="line">100kΩ</tspan></text>
+             sodipodi:role="line">{{ r_str }}Ω</tspan></text>
         <text
            sodipodi:linespacing="115%"
            id="text6909-3"
@@ -312,15 +318,15 @@
              style="font-size:14px;font-style:italic;text-align:end;line-height:114.99999762%;text-anchor:end;-inkscape-font-specification:Sans Italic"
              y="-140.82802"
              x="-107.02335"
-             id="tspan6911-7"
-             sodipodi:role="line">C<tspan
+             sodipodi:role="line"
+             id="tspan3043">C<tspan
    id="tspan6915-0"
    style="font-size:14px;text-align:end;line-height:114.99999762%;text-anchor:end;baseline-shift:sub">1</tspan></tspan><tspan
              id="tspan6913-42"
              style="font-size:12px;text-align:end;line-height:114.99999762%;text-anchor:end"
-             y="-126.56204"
+             y="-126.56203"
              x="-107.02335"
-             sodipodi:role="line">100pF</tspan></text>
+             sodipodi:role="line">{{ c_str }}F</tspan></text>
         <text
            sodipodi:linespacing="115%"
            id="text6909-3-2"
@@ -345,31 +351,31 @@
            id="text6909-3-2-3"
            y="-135.93861"
            x="-60.916164"
-           style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:114.99999762000000203%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:114.99999762%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
            xml:space="preserve"><tspan
-             style="font-size:14px;font-style:italic;text-align:start;line-height:114.99999762000000203%;text-anchor:start;-inkscape-font-specification:Sans Italic"
+             style="font-size:14px;font-style:italic;text-align:start;line-height:114.99999762%;text-anchor:start;-inkscape-font-specification:Sans Italic"
              y="-135.93861"
-             x="-37.251984"
+             x="-60.916164"
              id="tspan6911-7-7-7"
              sodipodi:role="line">V<tspan
    id="tspan7027"
-   style="font-size:65.00091553000000033%;baseline-shift:sub;text-anchor:start;text-align:start">out</tspan></tspan><tspan
+   style="font-size:65.00091553%;text-align:start;text-anchor:start;baseline-shift:sub">out</tspan></tspan><tspan
              id="tspan6913-42-2-1"
-             style="font-size:12px;text-align:start;line-height:114.99999762000000203%;text-anchor:start"
+             style="font-size:12px;text-align:start;line-height:114.99999762%;text-anchor:start"
              y="-119.83862"
-             x="-37.251984"
+             x="-60.916164"
              sodipodi:role="line" /></text>
       </g>
       <flowRoot
          xml:space="preserve"
          id="flowRoot7029"
-         style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
            id="flowRegion7031"><rect
              id="rect7033"
              width="215.66757"
              height="164.1498"
              x="56.063465"
              y="45.240093" /></flowRegion><flowPara
-           id="flowPara7035"></flowPara></flowRoot>    </g>
+           id="flowPara7035" /></flowRoot>    </g>
   </g>
 </svg>

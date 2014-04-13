@@ -6,7 +6,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+  .controller('FiltersRC', ['$scope', function($scope) {
 
 	$scope.r_str = "100k";
 	$scope.c_str = "20µ";
@@ -44,7 +44,7 @@ angular.module('myApp.controllers', [])
 			$scope.c_str = unitStringfromFloat(c);
 		}
 		catch(err){
-
+			$scope.c_str = "err"
 		}
 	};
 

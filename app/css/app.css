@@ -3,6 +3,22 @@ body {
   padding-top: 50px;
 }
 
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+
+}
+
+.minibar {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+// Do I need all of this down there ?
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

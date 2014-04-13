@@ -1,0 +1,30 @@
+
+<div class="navbar navbar-inverse minibar">
+	<div class="container">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#/filters/rc/lowpass">Low pass</a></li>
+			<li><a href="#/filters/rc/highpass">High pass</a></li>
+			<li><a href="#/filters/rc/pwm">PWM</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-6">
+
+		<p>
+			R : <input type="text" ng-model="r_str" ng-blur="updateR()" /><br/>
+			C : <input type="text" ng-model="c_str" ng-blur="updateC()" /><br/> 
+		</p>
+		<p>T: {{ tau }}</p>
+		<p>R : {{ r }}. C = {{ c }}</p>
+		<p>r_str : {{ r_str }}, c_str : {{ c_str }}</p>
+
+	</div>
+
+
+	<div class="col-lg-6">
+		<span ng-include="'img/filters-rc-lowpass.svg'"></span>
+	</div>
+</div>
