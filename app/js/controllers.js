@@ -29,7 +29,7 @@ angular.module('myApp.controllers', [])
 			$scope.r_str = unitStringfromFloat(r);
 		}
 		catch(err){
-
+			$scope.r_str = "err"
 		}
 	};
 
