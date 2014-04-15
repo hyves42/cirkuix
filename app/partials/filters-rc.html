@@ -12,18 +12,22 @@
 
 <div class="row">
 	<div class="col-lg-6">
-
+	<form name="myForm">
 		<p>
-			R : <input type="text" ng-model="r_str" ng-blur="updateR()" /><br/>
-			C : <input type="text" ng-model="c_str" ng-blur="updateC()" /><br/> 
+			R : <input type="text" ng-model="r1" name="r1" elec-numbers-only />&Omega;<br/>
+			<div ng-show="myForm.r1.$error.format">Bad format!</div>
+			C : <input type="text" ng-model="c1" name="c1" elec-numbers-only />F<br/> 
+			<div ng-show="myForm.c1.$error.format">Bad format!</div>
+			f : <input type="text" ng-model="freq" name="freq" elec-numbers-only />Hz<br/> 
+			<div ng-show="myForm.freq.$error.format">Bad format!</div>
+			&tau; : <input type="text" ng-model="tau" name="tau" elec-numbers-only />s<br/> 
+			<div ng-show="myForm.tau.$error.format">Bad format!</div>
 		</p>
 		<p>T: {{ tau }}</p>
-		<p>R : {{ r }}. C = {{ c }}</p>
-		<p>r_str : {{ r_str }}, c_str : {{ c_str }}</p>
+		<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
+		<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
 
-	</div>
-
-
+	</form>
 	<div class="col-lg-6">
 		<span ng-include="'img/filters-rc-lowpass.svg'"></span>
 	</div>

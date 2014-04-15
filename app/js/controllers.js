@@ -8,9 +8,8 @@
 angular.module('myApp.controllers', [])
   .controller('FiltersRC', ['$scope', function($scope) {
 
-	$scope.r_str = "100k";
-	$scope.c_str = "20µ";
-	$scope.tau = 0.00001;
+	$scope.r1 = "100k";
+	$scope.c1 = "20µ";
 
 	
 	$scope.updateCircuitValues = function () {

@@ -18,11 +18,13 @@ angular.module('myApp.directives', [])
 			link: function(scope, element, attrs, ngModel) {
 
 				element.on('blur', function() {
-					scope.$apply(function () {
-						ngModel.$setViewValue(unitStringfromFloat(scope[attrs.ngModel+"_float"]));
-						ngModel.$render();
-						ngModel.$setValidity('format', true);
-					});
+					if (ngModel.$valid){
+						scope.$apply(function () {
+							console.log(ngModel)
+							ngModel.$setViewValue(unitStringfromFloat(scope[attrs.ngModel+"_float"]));
+							ngModel.$render();
+						});
+					}
 				});
 
 				ngModel.$parsers.push(function (inputValue) {
@@ -45,7 +47,7 @@ angular.module('myApp.directives', [])
 					catch(err){
 						ngModel.$setValidity('format', false);
 						scope[attrs.ngModel+"_float"] = undefined;
-					//	return undefined;
+						return undefined;
 					}
 
 					return filteredInput;

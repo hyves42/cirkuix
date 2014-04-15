@@ -193,7 +193,7 @@
              x="-128.6422"
              y="-182.83165"
              id="tspan6913"
-             style="font-size:12px;text-align:center;line-height:114.99999762%;text-anchor:middle">{{ r_str }}Ω</tspan></text>
+             style="font-size:12px;text-align:center;line-height:114.99999762%;text-anchor:middle">{{ r1 }}Ω</tspan></text>
         <text
            x="-107.02335"
            y="-140.82802"
@@ -209,7 +209,7 @@
              x="-107.02335"
              y="-126.56203"
              id="tspan6913-42"
-             style="font-size:12px;text-align:end;line-height:114.99999762%;text-anchor:end">{{ c_str }}F</tspan></text>
+             style="font-size:12px;text-align:end;line-height:114.99999762%;text-anchor:end">{{ c1 }}F</tspan></text>
         <text
            x="-179.67465"
            y="-135.93861"
