@@ -18,6 +18,10 @@ body {
 }
 
 
+.ng-invalid {
+  border: 1px solid red;
+}
+
 // Do I need all of this down there ?
 .menu {
   list-style: none;

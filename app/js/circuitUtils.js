@@ -19,7 +19,7 @@ function factorFromUnit(c){
 		case 'm' :
 			mul = 0.001;
 			break;
-		case 'μ':
+		case 'µ':
 		case 'u':
 			mul = 0.000001;
 			break;
