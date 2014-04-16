@@ -38,9 +38,6 @@ angular.module('myApp.directives', [])
 
 				ngModel.$parsers.push(function (inputValue) {
 
-					console.log("inputvalue " + inputValue);
-					console.log("viewValue " + ngModel.$viewValue);
-
 					if (inputValue == undefined) return '' 
 
 					var filteredInput = inputValue.replace(/[^0-9,^TGMkmunp,^\\.,^µ]/g, ''); 
@@ -65,6 +62,32 @@ angular.module('myApp.directives', [])
 					return filteredInput;
 
 				});
+
+			}
+		};
+	})
+
+	.directive('btnCheckbox', function() {
+		return {    
+			require: 'ngModel',
+			link: function(scope, element, attrs, ngModel) {
+
+				element.bind("click", function() {
+					scope.$apply(function() {     
+						ngModel.$setViewValue(element.hasClass("active") ? false : true);
+					});
+				});
+
+				scope.$watch(function() {
+					return ngModel.$modelValue;
+				}, function(modelValue) {
+					if (angular.equals(modelValue, true)) {
+						element.addClass("active");  
+					} else {
+						element.removeClass("active");  
+					}
+				});
+
 
 			}
 		};

@@ -11,10 +11,15 @@ angular.module('myApp.controllers', [])
 	$scope.r1 = "100k";
 	$scope.c1 = "20u";
 	$scope.tau=0;
+	$scope.constrain_r= true;
 	
 	$scope.updateCircuitValues = function () {
 		//Dummy test
-		$scope.tau += 1;
+		$scope.tau_float += 1;
+	};
+
+	$scope.updateCircuitConstraints = function () {
+		$scope.tau_float += 10;
 	};
 
 

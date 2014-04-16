@@ -19,7 +19,13 @@
 								elec-numbers-only="" 
 								ng-blur="updateCircuitValues()" />
 							<span class="input-group-btn">
-								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+								<button class="btn" 
+									type="button"
+									btn-checkbox=""
+									ng-click="updateCircuitConstraints()"
+									ng-model="constrain_r">
+									<span class="glyphicon glyphicon-magnet"></span>
+								</button>
 							</span>
 						</div>
 						<div class="alert alert-value" ng-show="myForm.r1.$error.format">
@@ -37,7 +43,13 @@
 								elec-numbers-only="" 
 								ng-blur="updateCircuitValues()" />
 							<span class="input-group-btn">
-								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+								<button class="btn" 
+									type="button"
+									btn-checkbox=""
+									ng-click="updateCircuitConstraints()"
+									ng-model="constrain_c">
+									<span class="glyphicon glyphicon-magnet"></span>
+								</button>
 							</span>
 						</div>
 
@@ -57,7 +69,13 @@
 								elec-numbers-only="" 
 								ng-blur="updateCircuitValues()" />
 							<span class="input-group-btn">
-								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+								<button class="btn" 
+									type="button"
+									btn-checkbox=""
+									ng-click="updateCircuitConstraints()"
+									ng-model="constrain_freq">
+									<span class="glyphicon glyphicon-magnet"></span>
+								</button>
 							</span>
 						</div>
 
@@ -78,7 +96,13 @@
 								elec-numbers-only="" 
 								ng-blur="updateCircuitValues()" />
 							<span class="input-group-btn">
-								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+								<button class="btn" 
+									type="button"
+									btn-checkbox=""
+									ng-click="updateCircuitConstraints()"
+									ng-model="constrain_tau">
+									<span class="glyphicon glyphicon-magnet"></span>
+								</button>
 							</span>
 						</div>
 
@@ -92,6 +116,7 @@
 				<p>T: {{ tau }}</p>
 				<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
 				<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
+				{{constrain_r}}
 
 			</form>
 		</div>
