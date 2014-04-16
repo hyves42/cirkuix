@@ -1,34 +1,104 @@
 
-<div class="navbar navbar-inverse minibar">
-	<div class="container">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#/filters/rc/lowpass">Low pass</a></li>
-			<li><a href="#/filters/rc/highpass">High pass</a></li>
-			<li><a href="#/filters/rc/pwm">PWM</a></li>
-		</ul>
-	</div>
+<div class="btn-group">
+	<button class="active btn" type="button">Low pass</button>
+	<button id="show-html" class="btn" type="button">High pass</button>
+	<button id="show-html" class="btn" type="button">PWM</button>
 </div>
-
 
 <div class="row">
 	<div class="col-lg-6">
-	<form name="myForm">
-		<p>
-			R : <input type="text" ng-model="r1" name="r1" elec-numbers-only />&Omega;<br/>
-			<div ng-show="myForm.r1.$error.format">Bad format!</div>
-			C : <input type="text" ng-model="c1" name="c1" elec-numbers-only />F<br/> 
-			<div ng-show="myForm.c1.$error.format">Bad format!</div>
-			f : <input type="text" ng-model="freq" name="freq" elec-numbers-only />Hz<br/> 
-			<div ng-show="myForm.freq.$error.format">Bad format!</div>
-			&tau; : <input type="text" ng-model="tau" name="tau" elec-numbers-only />s<br/> 
-			<div ng-show="myForm.tau.$error.format">Bad format!</div>
-		</p>
-		<p>T: {{ tau }}</p>
-		<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
-		<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
+		<div class="thumbnail">
+			<form name="myForm">
+				<p>
+					<div class="form-group">
+						<label>R (&Omega;)</label>
+						<div class="form-group input-group">
+							<input class="form-control" 
+								type="text" 
+								ng-model="r1" name="r1" 
+								elec-numbers-only="" 
+								ng-blur="updateCircuitValues()" />
+							<span class="input-group-btn">
+								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+							</span>
+						</div>
+						<div class="alert alert-value" ng-show="myForm.r1.$error.format">
+							Bad format!
+						</div>
+						
+					</div>
+				</p>
+				<p>
+					<div class="form-group">
+						<label>C (F)</label>
+						<div class="form-group input-group">
+							<input class="form-control" 
+								type="text" ng-model="c1" name="c1" 
+								elec-numbers-only="" 
+								ng-blur="updateCircuitValues()" />
+							<span class="input-group-btn">
+								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+							</span>
+						</div>
 
-	</form>
+						<div class="alert alert-value" ng-show="myForm.c1.$error.format">
+							Bad format!
+						</div>
+					</div>
+				</p>
+
+				<p>
+					<div class="form-group">
+						<label>Cutoff frequency (Hz)</label>
+						<div class="form-group input-group">
+							<input class="form-control" 
+								type="text" 
+								ng-model="freq" name="freq" 
+								elec-numbers-only="" 
+								ng-blur="updateCircuitValues()" />
+							<span class="input-group-btn">
+								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+							</span>
+						</div>
+
+						<div class="alert alert-value" ng-show="myForm.freq.$error.format">
+							Bad format!
+						</div>
+
+					</div>
+				</p>
+
+				<p>
+					<div class="form-group">
+						<label>Time constant &tau; (s)</label>
+						<div class="form-group input-group">
+							<input class="form-control" 
+								type="text" 
+								ng-model="tau" name="tau" 
+								elec-numbers-only="" 
+								ng-blur="updateCircuitValues()" />
+							<span class="input-group-btn">
+								<button class="btn" type="button"><span class="glyphicon glyphicon-magnet"></span></button>
+							</span>
+						</div>
+
+						<div class="alert alert-value" ng-show="myForm.tau.$error.format">
+							Bad format!
+						</div>
+					</div>
+				</p>
+
+
+				<p>T: {{ tau }}</p>
+				<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
+				<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
+
+			</form>
+		</div>
+	</div>
 	<div class="col-lg-6">
-		<span ng-include="'img/filters-rc-lowpass.svg'"></span>
+		<div class="thumbnail">
+			<span ng-include="'img/filters-rc-lowpass.svg'"></span>
+		</div>
 	</div>
 </div>
