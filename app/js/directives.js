@@ -20,14 +20,26 @@ angular.module('myApp.directives', [])
 				element.on('blur', function() {
 					if (ngModel.$valid){
 						scope.$apply(function () {
-							console.log(ngModel)
-							ngModel.$setViewValue(unitStringfromFloat(scope[attrs.ngModel+"_float"]));
-							ngModel.$render();
+							try{
+								var r = floatFromUnitString(ngModel.$viewValue);
+								ngModel.$setValidity('format', true);
+								scope[attrs.ngModel+"_float"] = r
+
+								ngModel.$setViewValue(unitStringfromFloat(r));
+								ngModel.$render();
+							}
+							catch(err){
+								ngModel.$setValidity('format', false);
+								scope[attrs.ngModel+"_float"] = undefined;
+							}
 						});
 					}
 				});
 
 				ngModel.$parsers.push(function (inputValue) {
+
+					console.log("inputvalue " + inputValue);
+					console.log("viewValue " + ngModel.$viewValue);
 
 					if (inputValue == undefined) return '' 
 
