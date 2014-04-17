@@ -18,8 +18,17 @@ body {
 }
 
 
-.ng-invalid {
+input.ng-invalid {
   border: 1px solid red;
+}
+
+button.active {
+  background-color: #FCF8E3;
+}
+
+.alert-value {
+  background-color: #FCF8E3;
+  border: 1px solid #FBEED5;
 }
 
 // Do I need all of this down there ?

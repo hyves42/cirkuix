@@ -20,9 +20,18 @@ angular.module('myApp.directives', [])
 				element.on('blur', function() {
 					if (ngModel.$valid){
 						scope.$apply(function () {
-							console.log(ngModel)
-							ngModel.$setViewValue(unitStringfromFloat(scope[attrs.ngModel+"_float"]));
-							ngModel.$render();
+							try{
+								var r = floatFromUnitString(ngModel.$viewValue);
+								ngModel.$setValidity('format', true);
+								scope[attrs.ngModel+"_float"] = r
+
+								ngModel.$setViewValue(unitStringfromFloat(r));
+								ngModel.$render();
+							}
+							catch(err){
+								ngModel.$setValidity('format', false);
+								scope[attrs.ngModel+"_float"] = undefined;
+							}
 						});
 					}
 				});
@@ -53,6 +62,32 @@ angular.module('myApp.directives', [])
 					return filteredInput;
 
 				});
+
+			}
+		};
+	})
+
+	.directive('btnCheckbox', function() {
+		return {    
+			require: 'ngModel',
+			link: function(scope, element, attrs, ngModel) {
+
+				element.bind("click", function() {
+					scope.$apply(function() {     
+						ngModel.$setViewValue(element.hasClass("active") ? false : true);
+					});
+				});
+
+				scope.$watch(function() {
+					return ngModel.$modelValue;
+				}, function(modelValue) {
+					if (angular.equals(modelValue, true)) {
+						element.addClass("active");  
+					} else {
+						element.removeClass("active");  
+					}
+				});
+
 
 			}
 		};
