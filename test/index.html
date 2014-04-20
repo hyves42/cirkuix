@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Cirkuix</title>
+	<link rel="stylesheet" href="../app/css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../app/css/app.css" />
+</head>
+<body>
+
+	<div class="container" data-ng-controller="controller">
+
+		<script>
+			function controller($scope){
+				$scope.graph = {
+					'width': 500, 
+					'height': 500,
+					'xProperties':{'drawAxis':true, 'gridSize':10, 'log':true, 'min':-10, 'max':20},
+					'yProperties':{'drawAxis':true, 'gridSize':10, 'log':false, 'min':-10, 'max':20},
+					'data':[
+						{
+							'name':'data1',
+							'color':'00ff00',
+							'points':[{'x':0, 'y':0}, {'x':10, 'y':10}, {'x':10, 'y':110}]
+						},
+						{
+							'name':'data2',
+							'color':'0000ff',
+							'points':[{'x':10, 'y':30}, {'x':10, 'y':10}, {'x':110, 'y':110}]
+						},
+					]
+				}	
+			}
+		</script>
+
+		<input type="text" ng-model="graph.data[0].points[0].x" />
+		<input type="text" ng-model="graph.data[0].points[0].y" />
+		<input type="checkbox" ng-model="graph.xProperties.drawAxis" />
+		<input type="checkbox" ng-model="graph.yProperties.drawAxis" />
+		<div>
+			<div class="row">
+				<div class="col-lg-6">
+					<plox-svg graph="graph"></plox-svg>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="footer">
+
+			<p>Cirkuix v<span app-version></span></p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script src="../app/js/bootstrap/jquery-2.1.0.min.js"></script>
+    <script src="../app/js/bootstrap/bootstrap.min.js"></script>
+	<script src="../app/js/angular/angular.min.js"></script>
+	<script src="../app/js/angular/angular-route.min.js"></script>
+
+	<script src="../app/js/circuitUtils.js"></script>
+
+	<script src="../app/js/app.js"></script>
+	<script src="../app/js/services.js"></script>
+	<script src="../app/js/controllers.js"></script>
+	<script src="../app/js/filters.js"></script>
+	<script src="../app/js/directives.js"></script>
+	<script src="../app/js/plox/plox.svg.js"></script>
+</body>
+</html>

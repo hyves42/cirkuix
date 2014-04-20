@@ -17,9 +17,26 @@ angular.module('plox', [])
 			restrict: 'AE',
 			replace: 'true',
 			template: '<svg ng-attr-width="{{graph.width}}" ng-attr-height="{{graph.height}}">'
-			+'<path ng-repeat="d in graph.data" ng-attr-d="{{ d.points | topath }}" style="fill:none;stroke:#{{ d.color }};stroke-width:1;"/>'
+			+	'<g ng-switch="graph.xProperties.drawAxis">'
+			+		'<g ng-switch-when="true">'
+			+			'<path d="M 0 0 H {{ graph.width }}" style="fill:none;stroke:#000000;stroke-width:1"/>'
+			+		'</g>'			
+			+		'<g ng-switch-default>'
+			+		'</g>'
+			+	'</g>'
+
+			+	'<g ng-switch="graph.yProperties.drawAxis">'
+			+		'<g ng-switch-when="true">'
+			+			'<path d="M 1 1 V {{ graph.height }}" style="fill:none;stroke:#000000;stroke-width:1"/>'
+			+		'</g>'			
+			+		'<g ng-switch-default>'
+			+		'</g>'
+			+	'</g>'
+
+			+	'<path ng-repeat="d in graph.data" ng-attr-d="{{ d.points | topath }}" style="fill:none;stroke:#{{ d.color }};stroke-width:1;"/>'						
 			+'</svg>'
 		};
 	})
+
 ;
 
