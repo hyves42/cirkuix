@@ -71,7 +71,6 @@ angular.module('myApp.controllers', [])
 
 	$scope.updateConstrain_c = function () {
 		if ($scope.constrain_c == false){
-			console.log("nooope");
 			return;
 		}
 
@@ -141,7 +140,52 @@ angular.module('myApp.controllers', [])
 	}
 
 	$scope.computeCircuit = function() {
+		if (countCountraints() != 2) return;
 
+		var constrainFreq = $scope.constrain_freq;
+
+		if ($scope.constrain_tau){
+			var tau = floatFromUnitString($scope.tau);
+			var f = 1/(2*Math.PI*tau);
+			$scope.freq = unitStringfromFloat(f);
+			constrainFreq = true;
+		}
+
+		if ($scope.constrain_r && $scope.constrain_c){
+			var r = floatFromUnitString($scope.r1);
+			var c = floatFromUnitString($scope.c1);
+			var tau = r*c;
+			var f = 1/(2*Math.PI*tau);
+
+			$scope.freq = unitStringfromFloat(f);
+			$scope.tau = unitStringfromFloat(tau);
+		}
+
+		if ($scope.constrain_r && constrainFreq){
+			var r = floatFromUnitString($scope.r1);
+			var f = floatFromUnitString($scope.freq);
+			var c = 1/(2*Math.PI*r*f);
+			var tau = r*c;
+			var f = 1/(2*Math.PI*tau);
+
+			$scope.r1 = unitStringfromFloat(r);
+			$scope.c1 = unitStringfromFloat(c);
+			$scope.freq = unitStringfromFloat(f);
+			$scope.tau = unitStringfromFloat(tau);
+		}
+
+		if ($scope.constrain_c && constrainFreq){
+			var c = floatFromUnitString($scope.c1);
+			var f = floatFromUnitString($scope.freq);
+			var r = 1/(2*Math.PI*c*f);
+			var tau = r*c;
+			var f = 1/(2*Math.PI*tau);
+
+			$scope.r1 = unitStringfromFloat(r);
+			$scope.c1 = unitStringfromFloat(c);
+			$scope.freq = unitStringfromFloat(f);
+			$scope.tau = unitStringfromFloat(tau);
+		}
 	}
 
 	var countCountraints = function(){
