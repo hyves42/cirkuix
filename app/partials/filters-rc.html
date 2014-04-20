@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="col-lg-6">
 		<div class="thumbnail">
-			<form name="myForm">
+			<form name="myForm" ng-submit="computeCircuit()">
 				<p>
 					<div class="form-group">
 						<label>R (&Omega;)</label>
@@ -17,12 +17,12 @@
 								type="text" 
 								ng-model="r1" name="r1" 
 								elec-numbers-only="" 
-								ng-blur="updateCircuitValues()" />
+								ng-change="update_r()" />
 							<span class="input-group-btn">
 								<button class="btn" 
 									type="button"
 									btn-checkbox=""
-									ng-click="updateCircuitConstraints()"
+									ng-change="updateConstrain_r()"
 									ng-model="constrain_r">
 									<span class="glyphicon glyphicon-magnet"></span>
 								</button>
@@ -41,12 +41,12 @@
 							<input class="form-control" 
 								type="text" ng-model="c1" name="c1" 
 								elec-numbers-only="" 
-								ng-blur="updateCircuitValues()" />
+								ng-change="update_c()" />
 							<span class="input-group-btn">
 								<button class="btn" 
 									type="button"
 									btn-checkbox=""
-									ng-click="updateCircuitConstraints()"
+									ng-change="updateConstrain_c()"
 									ng-model="constrain_c">
 									<span class="glyphicon glyphicon-magnet"></span>
 								</button>
@@ -67,12 +67,12 @@
 								type="text" 
 								ng-model="freq" name="freq" 
 								elec-numbers-only="" 
-								ng-blur="updateCircuitValues()" />
+								ng-change="update_freq()" />
 							<span class="input-group-btn">
 								<button class="btn" 
 									type="button"
 									btn-checkbox=""
-									ng-click="updateCircuitConstraints()"
+									ng-change="updateConstrain_freq()"
 									ng-model="constrain_freq">
 									<span class="glyphicon glyphicon-magnet"></span>
 								</button>
@@ -94,12 +94,12 @@
 								type="text" 
 								ng-model="tau" name="tau" 
 								elec-numbers-only="" 
-								ng-blur="updateCircuitValues()" />
+								ng-change="update_tau()" />
 							<span class="input-group-btn">
 								<button class="btn" 
 									type="button"
 									btn-checkbox=""
-									ng-click="updateCircuitConstraints()"
+									ng-change="updateConstrain_tau()"
 									ng-model="constrain_tau">
 									<span class="glyphicon glyphicon-magnet"></span>
 								</button>
@@ -113,10 +113,12 @@
 				</p>
 
 
-				<p>T: {{ tau }}</p>
+				<p>T: {{ tau_float }}</p>
 				<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
 				<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
-				{{constrain_r}}
+				<p>last constrain : {{last_constrain}}</p>
+
+
 
 			</form>
 		</div>
