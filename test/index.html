@@ -15,36 +15,65 @@
 				$scope.graph = {
 					'width': 500, 
 					'height': 500,
-					'xProperties':{'drawAxis':true, 'gridSize':10, 'log':true, 'min':-10, 'max':20},
-					'yProperties':{'drawAxis':true, 'gridSize':10, 'log':false, 'min':-10, 'max':20},
+					'xProperties':{'drawAxis':true, 'min':-1, 'max':91},
+					'yProperties':{'drawAxis':true, 'min':-1, 'max':91},
+					'xGrid':[
+						{'label':'', 'x':10},
+						{'label':'', 'x':20},
+						{'label':'', 'x':30},
+						{'label':'', 'x':40},
+						{'label':'', 'x':50},
+						{'label':'', 'x':60},
+						{'label':'', 'x':70},
+						{'label':'', 'x':80},
+						{'label':'', 'x':90},
+					],
+					'yGrid':[
+						{'label':'', 'y':10},
+						{'label':'', 'y':20},
+						{'label':'', 'y':30},
+						{'label':'', 'y':40},
+						{'label':'', 'y':50},
+						{'label':'', 'y':60},
+						{'label':'', 'y':70},
+						{'label':'', 'y':80},
+						{'label':'', 'y':90},
+					],
 					'data':[
 						{
 							'name':'data1',
 							'color':'00ff00',
-							'points':[{'x':0, 'y':0}, {'x':10, 'y':10}, {'x':10, 'y':110}]
+							'width':1,
+							'points':[{'x':0, 'y':0}, {'x':10, 'y':10}, {'x':20, 'y':10}]
 						},
 						{
 							'name':'data2',
 							'color':'0000ff',
-							'points':[{'x':10, 'y':30}, {'x':10, 'y':10}, {'x':110, 'y':110}]
+							'width':4,
+							'points':[{'x':10, 'y':30}, {'x':50, 'y':10}, {'x':95, 'y':95}]
 						},
 					]
 				}	
 			}
 		</script>
 
-		<input type="text" ng-model="graph.data[0].points[0].x" />
-		<input type="text" ng-model="graph.data[0].points[0].y" />
-		<input type="checkbox" ng-model="graph.xProperties.drawAxis" />
-		<input type="checkbox" ng-model="graph.yProperties.drawAxis" />
-		<div>
-			<div class="row">
-				<div class="col-lg-6">
-					<plox-svg graph="graph"></plox-svg>
-				</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<p>point x<input type="text" ng-model="graph.data[0].points[0].x" /></p>
+				<p>point y<input type="text" ng-model="graph.data[0].points[0].y" /></p>
+				<p>x axis<input type="checkbox" ng-model="graph.xProperties.drawAxis" /></p>
+				<p>y axis<input type="checkbox" ng-model="graph.yProperties.drawAxis" /></p>
+				<p>x log<input type="checkbox" ng-model="graph.xProperties.log" /></p>
+				<p>y log<input type="checkbox" ng-model="graph.yProperties.log" /></p>
 			</div>
-
 		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<plox-svg graph="graph"></plox-svg>
+			</div>
+		</div>
+
+
 
 		<div class="footer">
 
