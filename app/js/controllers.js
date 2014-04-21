@@ -216,29 +216,29 @@ angular.module('myApp.controllers', [])
 		var tau2 = Math.pow(2*Math.PI*floatFromUnitString($scope.tau), 2);
 
 		//Find a good clean start frequency
-		startfreq=Math.pow(10, Math.floor(Math.log10(startfreq)));
+		startfreq=Math.pow(10, Math.floor(log10(startfreq)));
 	//	startfreq=Math.min(startfreq, 1);
 
 		$scope.amplitude_bode.data[0].points = [];
 
 		for (var f = startfreq; f<endfreq; f *=1.2){
 			$scope.amplitude_bode.data[0].points.push({
-				'x':Math.log10(f), 
-				'y':-10*Math.log10(1+tau2*f*f)
+				'x':log10(f), 
+				'y':-10*log10(1+tau2*f*f)
 			});
 		}
 
-		$scope.amplitude_bode.xProperties.min = Math.log10(startfreq);
-		$scope.amplitude_bode.xProperties.max = Math.log10(endfreq);
+		$scope.amplitude_bode.xProperties.min = log10(startfreq);
+		$scope.amplitude_bode.xProperties.max = log10(endfreq);
 
-		$scope.amplitude_bode.yProperties.min = 20*Math.log10(0.0001);
+		$scope.amplitude_bode.yProperties.min = 20*log10(0.0001);
 		$scope.amplitude_bode.yProperties.max = 1;
 
 		$scope.amplitude_bode.yGrid = [];
 		for (var g = 0.1, gain = 20; g > 0.0001; g /= 10, gain +=20){
 			$scope.amplitude_bode.yGrid.push({
 				'label':'-'+gain+'dB',
-				'y':20*Math.log10(g)
+				'y':20*log10(g)
 			});
 		}
 
@@ -247,7 +247,7 @@ angular.module('myApp.controllers', [])
 			for (var ff = f; ff<f*10; ff+=f){
 				$scope.amplitude_bode.xGrid.push({
 					'label':(ff==f)?unitStringfromFloat(f):'',
-					'x':Math.log10(ff)
+					'x':log10(ff)
 				});
 			}
 		}
