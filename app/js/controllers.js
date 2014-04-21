@@ -31,8 +31,8 @@ angular.module('myApp.controllers', [])
 		'data':[
 			{
 							'name':'Amplitude',
-							'color':'#00ff00',
-							'width':1,
+							'color':'#1533ad',
+							'width':3,
 							'points':[]
 			}
 		]
