@@ -15,8 +15,8 @@
 				$scope.graph = {
 					'width': 500, 
 					'height': 200,
-					'xProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'888888', 'min':-0, 'max':90},
-					'yProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'333333', 'min':-0, 'max':90},
+					'xProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'#888888', 'min':-0, 'max':90},
+					'yProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'#333333', 'min':-0, 'max':90},
 					'xGrid':[
 						{'label':'10', 'x':10},
 						{'label':'20', 'x':20},
@@ -29,26 +29,26 @@
 						{'label':'', 'x':90},
 					],
 					'yGrid':[
-						{'label':'', 'y':10},
-						{'label':'', 'y':20},
-						{'label':'', 'y':30},
-						{'label':'', 'y':40},
+						{'label':'10', 'y':10},
+						{'label':'20', 'y':20},
+						{'label':'30', 'y':30},
+						{'label':'40', 'y':40},
 						{'label':'50', 'y':50},
 						{'label':'', 'y':60},
 						{'label':'', 'y':70},
 						{'label':'', 'y':80},
-						{'label':'', 'y':90},
+						{'label':'90', 'y':90},
 					],
 					'data':[
 						{
 							'name':'data1',
-							'color':'00ff00',
+							'color':'#00ff00',
 							'width':1,
 							'points':[{'x':0, 'y':0}, {'x':10, 'y':10}, {'x':20, 'y':10}]
 						},
 						{
 							'name':'data2',
-							'color':'0000ff',
+							'color':'#0000ff',
 							'width':4,
 							'points':[{'x':10, 'y':30}, {'x':50, 'y':10}, {'x':95, 'y':95}]
 						},
@@ -63,8 +63,6 @@
 				<p>point y<input type="text" ng-model="graph.data[0].points[0].y" /></p>
 				<p>x axis<input type="checkbox" ng-model="graph.xProperties.drawAxis" /></p>
 				<p>y axis<input type="checkbox" ng-model="graph.yProperties.drawAxis" /></p>
-				<p>x log<input type="checkbox" ng-model="graph.xProperties.log" /></p>
-				<p>y log<input type="checkbox" ng-model="graph.yProperties.log" /></p>
 			</div>
 		</div>
 		<div class="row">

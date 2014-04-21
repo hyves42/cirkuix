@@ -13,8 +13,8 @@ angular.module('plox', [])
 			for (var i=0; i < data.length; i++){
 				var p = data[i];
 
-				var x = p.x * (w-20) / (xmax-xmin) + 10 +xmin*(w-20)/(xmin-xmax);
-				var y = p.y * (h-20) / (ymin-ymax) + 10 + ymax * (h-20) / (ymax-ymin);
+				var x = p.x * (w-40) / (xmax-xmin) + 30 +xmin*(w-40)/(xmin-xmax);
+				var y = p.y * (h-30) / (ymin-ymax) + 10 + ymax * (h-30) / (ymax-ymin);
 
 				out += x + ' ' + y + ' ';
 			}
@@ -27,7 +27,7 @@ angular.module('plox', [])
 			var xmin = graph.xProperties.min;
 			var xmax = graph.xProperties.max;			
 
-			return x * (w-20) / (xmax-xmin) + 10 +xmin*(w-20)/(xmin-xmax);
+			return x * (w-40) / (xmax-xmin) + 30 +xmin*(w-40)/(xmin-xmax);
 		};
 	})
 	.filter('convertY', function() {
@@ -36,7 +36,7 @@ angular.module('plox', [])
 			var ymin = graph.yProperties.min;
 			var ymax = graph.yProperties.max;
 
-			return y * (h-20) / (ymin-ymax) + 10 + ymax * (h-20) / (ymax-ymin);
+			return y * (h-30) / (ymin-ymax) + 10 + ymax * (h-30) / (ymax-ymin);
 		};
 	})
 	.directive('ploxSvg', function() {
@@ -54,14 +54,14 @@ angular.module('plox', [])
 +			'<path ng-repeat="g in graph.xGrid" '
 +				'ng-attr-d="M {{g.x | convertX:graph}} {{graph.yProperties.min | convertY:graph}} '
 +					'L {{g.x | convertX:graph}} {{graph.yProperties.max | convertY:graph}}" '
-+				'style="fill:none;stroke:#{{graph.xProperties.gridColor}};'
++				'style="fill:none;stroke:{{graph.xProperties.gridColor}};'
 +				'stroke-width:1;stroke-dasharray:3,3"/>'
 +		'</g>'
 +		'<g ng-switch-when="solid">'
 +			'<path ng-repeat="g in graph.xGrid" '
 +				'ng-attr-d="M {{g.x | convertX:graph}} {{graph.yProperties.min | convertY:graph}} '
 +					'L {{g.x | convertX:graph}} {{graph.yProperties.max | convertY:graph}}" '
-+				'style="fill:none;stroke:#{{graph.xProperties.gridColor}};'
++				'style="fill:none;stroke:{{graph.xProperties.gridColor}};'
 +				'stroke-width:1;"/>'
 +		'</g>'
 +		'<g ng-switch-when="caret">'
@@ -81,14 +81,14 @@ angular.module('plox', [])
 +			'<path ng-repeat="g in graph.yGrid" '
 +				'ng-attr-d="M {{graph.xProperties.min | convertX:graph}} {{g.y | convertY:graph}} '
 +					' L {{graph.xProperties.max | convertX:graph}} {{g.y | convertY:graph}}" '
-+				'style="fill:none;stroke:#{{graph.yProperties.gridColor}};'
++				'style="fill:none;stroke:{{graph.yProperties.gridColor}};'
 +				'stroke-width:1;stroke-dasharray:3,3"/>'
 +		'</g>'
 +		'<g ng-switch-when="solid">'
 +			'<path ng-repeat="g in graph.yGrid" '
 +				'ng-attr-d="M {{graph.xProperties.min | convertX:graph}} {{g.y | convertY:graph}} '
 +					' L {{graph.xProperties.max | convertX:graph}} {{g.y | convertY:graph}}" '
-+				'style="fill:none;stroke:#{{graph.yProperties.gridColor}};'
++				'style="fill:none;stroke:{{graph.yProperties.gridColor}};'
 +				'stroke-width:1;"/>'
 +		'</g>'
 +		'<g ng-switch-when="caret">'
@@ -113,6 +113,11 @@ angular.module('plox', [])
 +			'<path ng-attr-d="M {{(graph.xProperties.max | convertX:graph) + 6 }} {{ 0 | convertY:graph }} l -5 2"'
 +			' style="fill:none;stroke:#000000;stroke-width:1"/>'
 
++			'<text ng-repeat="g in graph.xGrid" '
++				'ng-attr-x="{{g.x | convertX:graph}}" ng-attr-y="{{(0 | convertY:graph) +11}}" '
++				'font-family="Sans" font-size="10" text-anchor="middle">{{ g.label }}</text>'
+
+
 +		'</g>'			
 +		'<g ng-switch-default>'
 +		'</g>'
@@ -130,13 +135,17 @@ angular.module('plox', [])
 +			'<path ng-attr-d="M {{ 0 | convertX:graph }} {{(graph.yProperties.max | convertY:graph) -6}} l 2 5"'
 +			' style="fill:none;stroke:#000000;stroke-width:1"/>'
 
++			'<text ng-repeat="g in graph.yGrid" '
++				'ng-attr-x="{{(-1 | convertX:graph) }}" ng-attr-y="{{g.y | convertY:graph}}" '
++				'font-family="Sans" font-size="10" text-anchor="end">{{ g.label }}</text>'
+
 +		'</g>'			
 +		'<g ng-switch-default>'
 +		'</g>'
 +	'</g>'
 
 +	'<path ng-repeat="d in graph.data" ng-attr-d="{{ d.points | topath:graph }}" '
-+		'style="fill:none;stroke:#{{ d.color }};stroke-width:{{d.width}};stroke-linecap:round"/>'
++		'style="fill:none;stroke:{{ d.color }};stroke-width:{{d.width}};stroke-linecap:round"/>'
 
 +'</svg>'
 		};
