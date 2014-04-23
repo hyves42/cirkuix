@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Cirkuix</title>
+	<link rel="stylesheet" href="../app/css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../app/css/app.css" />
+</head>
+<body>
+
+	<div class="container" data-ng-controller="controller">
+
+		<script>
+			function controller($scope){
+				$scope.graph = {
+					'width': 500, 
+					'height': 200,
+					'xProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'#888888', 'min':-0, 'max':90},
+					'yProperties':{'drawAxis':true, 'grid':'dashed', 'gridColor':'#333333', 'min':-0, 'max':90},
+					'xGrid':[
+						{'label':'10', 'x':10},
+						{'label':'20', 'x':20},
+						{'label':'30', 'x':30},
+						{'label':'', 'x':40},
+						{'label':'50', 'x':50},
+						{'label':'', 'x':60},
+						{'label':'', 'x':70},
+						{'label':'', 'x':80},
+						{'label':'', 'x':90},
+					],
+					'yGrid':[
+						{'label':'10', 'y':10},
+						{'label':'20', 'y':20},
+						{'label':'30', 'y':30},
+						{'label':'40', 'y':40},
+						{'label':'50', 'y':50},
+						{'label':'', 'y':60},
+						{'label':'', 'y':70},
+						{'label':'', 'y':80},
+						{'label':'90', 'y':90},
+					],
+					'data':[
+						{
+							'name':'data1',
+							'color':'#00ff00',
+							'width':1,
+							'points':[{'x':0, 'y':0}, {'x':10, 'y':10}, {'x':20, 'y':10}]
+						},
+						{
+							'name':'data2',
+							'color':'#0000ff',
+							'width':4,
+							'points':[{'x':10, 'y':30}, {'x':50, 'y':10}, {'x':95, 'y':95}]
+						},
+					]
+				}	
+			}
+		</script>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<p>point x<input type="text" ng-model="graph.data[0].points[0].x" /></p>
+				<p>point y<input type="text" ng-model="graph.data[0].points[0].y" /></p>
+				<p>x axis<input type="checkbox" ng-model="graph.xProperties.drawAxis" /></p>
+				<p>y axis<input type="checkbox" ng-model="graph.yProperties.drawAxis" /></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<plox-svg graph="graph"></plox-svg>
+			</div>
+		</div>
+
+
+
+		<div class="footer">
+
+			<p>Cirkuix v<span app-version></span></p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script src="../app/js/bootstrap/jquery-2.1.0.min.js"></script>
+    <script src="../app/js/bootstrap/bootstrap.min.js"></script>
+	<script src="../app/js/angular/angular.min.js"></script>
+	<script src="../app/js/angular/angular-route.min.js"></script>
+
+	<script src="../app/js/circuitUtils.js"></script>
+
+	<script src="../app/js/app.js"></script>
+	<script src="../app/js/services.js"></script>
+	<script src="../app/js/controllers.js"></script>
+	<script src="../app/js/filters.js"></script>
+	<script src="../app/js/directives.js"></script>
+	<script src="../app/js/plox/plox.svg.js"></script>
+</body>
+</html>
