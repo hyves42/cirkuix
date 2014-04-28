@@ -23,14 +23,12 @@ angular.module('myApp.directives', [])
 							try{
 								var r = floatFromUnitString(ngModel.$viewValue);
 								ngModel.$setValidity('format', true);
-								scope[attrs.ngModel+"_float"] = r
 
 								ngModel.$setViewValue(unitStringfromFloat(r));
 								ngModel.$render();
 							}
 							catch(err){
 								ngModel.$setValidity('format', false);
-								scope[attrs.ngModel+"_float"] = undefined;
 							}
 						});
 					}
@@ -50,12 +48,10 @@ angular.module('myApp.directives', [])
 					try{
 						var r = floatFromUnitString(filteredInput);
 						ngModel.$setValidity('format', true);
-						scope[attrs.ngModel+"_float"] = r
 						return filteredInput;
 					}
 					catch(err){
 						ngModel.$setValidity('format', false);
-						scope[attrs.ngModel+"_float"] = undefined;
 						return undefined;
 					}
 
@@ -73,7 +69,7 @@ angular.module('myApp.directives', [])
 			link: function(scope, element, attrs, ngModel) {
 
 				element.bind("click", function() {
-					scope.$apply(function() {     
+					scope.$apply(function() {
 						ngModel.$setViewValue(element.hasClass("active") ? false : true);
 					});
 				});
@@ -91,5 +87,22 @@ angular.module('myApp.directives', [])
 
 			}
 		};
-	});
+	})
 
+	.directive('buttonsRadio', function() {
+		return {
+			restrict: 'E',
+			scope: { model: '=', options:'='},
+			controller: function($scope){
+				$scope.activate = function(option){
+					console.log("activate "+option);
+					$scope.model = option;
+				};
+			},
+			template: "<button type='button' class='btn' "+
+				"ng-class='{active: option == model}'"+
+				"ng-repeat='option in options' "+
+				"ng-click='activate(option)'>{{option}} "+
+				"</button>"
+		};
+	});
