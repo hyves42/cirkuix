@@ -7,10 +7,42 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.2"
    width="170.29329"
    height="113.47566"
-   id="svg5319">
+   id="svg5319"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="filters-rc-highpass.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1615"
+     inkscape:window-height="1026"
+     id="namedview65"
+     showgrid="false"
+     inkscape:zoom="3.8051999"
+     inkscape:cx="-12.714171"
+     inkscape:cy="43.661686"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7037"
+     inkscape:snap-bbox="false"
+     inkscape:bbox-nodes="false"
+     inkscape:snap-grids="false"
+     inkscape:snap-to-guides="false"
+     inkscape:snap-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:object-nodes="true" />
   <defs
      id="defs5321" />
   <metadata
@@ -39,15 +71,16 @@
            transform="translate(-200.78396,-307.28942)"
            id="g6869">
           <g
-             transform="translate(48.36283,127.48332)"
+             transform="matrix(0,-1,1,0,95.76061,191.4614)"
              id="g170"
              style="fill:none;stroke:#000000;stroke-width:2;font-family:Sans-Serif">
             <path
                d="m 0,8 12,0 2,4 4,-8 4,8 4,-8 4,8 4,-8 2,4 12,0"
-               id="path172" />
+               id="path172"
+               inkscape:connector-curvature="0" />
           </g>
           <g
-             transform="translate(-16.66796,269.4614)"
+             transform="matrix(0,1,-1,0,-30.23939,15.05475)"
              id="g266"
              style="fill:none;stroke:#000000;stroke-width:2;font-family:Sans-Serif">
             <g
@@ -55,16 +88,20 @@
                id="g6663">
               <path
                  d="M 0,8 21,8"
-                 id="path268" />
+                 id="path268"
+                 inkscape:connector-curvature="0" />
               <path
                  d="m 21,0 0,16"
-                 id="path270" />
+                 id="path270"
+                 inkscape:connector-curvature="0" />
               <path
                  d="m 27,0 0,16"
-                 id="path272" />
+                 id="path272"
+                 inkscape:connector-curvature="0" />
               <path
                  d="M 27,8 48,8"
-                 id="path274" />
+                 id="path274"
+                 inkscape:connector-curvature="0" />
             </g>
           </g>
           <g
@@ -208,29 +245,31 @@
            y="-197.09763"
            id="text6909"
            xml:space="preserve"
-           style="font-size:40px;font-style:normal;font-weight:normal;line-height:114.99999762%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:114.99999762%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="115%"><tspan
              x="-128.6422"
              y="-197.09763"
              id="tspan6911"
-             style="font-size:14px;font-style:italic;text-align:center;line-height:114.99999762%;text-anchor:middle;-inkscape-font-specification:Sans Italic">R1</tspan><tspan
+             style="font-size:14px;font-style:italic;text-align:center;line-height:114.99999762%;text-anchor:middle;-inkscape-font-specification:Sans Italic">C1</tspan><tspan
              x="-128.6422"
              y="-182.83165"
              id="tspan6913"
-             style="font-size:12px;text-align:center;line-height:114.99999762%;text-anchor:middle">{{ r1 }}Ω</tspan></text>
+             style="font-size:12px;text-align:center;line-height:114.99999762%;text-anchor:middle">{{ c1 }}F</tspan></text>
         <text
            x="-107.02335"
            y="-140.82802"
            id="text6909-3"
            xml:space="preserve"
-           style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:114.99999762%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+           style="font-size:40px;font-style:normal;font-weight:normal;text-align:end;line-height:114.99999762%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           sodipodi:linespacing="115%"><tspan
              x="-107.02335"
              y="-140.82802"
              id="tspan3043"
-             style="font-size:14px;font-style:italic;text-align:end;line-height:114.99999762%;text-anchor:end;-inkscape-font-specification:Sans Italic">C1</tspan><tspan
+             style="font-size:14px;font-style:italic;text-align:end;line-height:114.99999762%;text-anchor:end;-inkscape-font-specification:Sans Italic">R1</tspan><tspan
              x="-107.02335"
              y="-126.56203"
              id="tspan6913-42"
-             style="font-size:12px;text-align:end;line-height:114.99999762%;text-anchor:end">{{ c1 }}F</tspan></text>
+             style="font-size:12px;text-align:end;line-height:114.99999762%;text-anchor:end">{{ r1 }}Ω</tspan></text>
         <text
            x="-179.67465"
            y="-135.93861"
