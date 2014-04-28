@@ -206,52 +206,9 @@ angular.module('myApp.controllers', [])
 			$scope.tau = unitStringfromFloat(tau);
 		}
 
-		updateGraph();
-	}
-
-
-	var updateGraph = function() {
-		var startfreq = floatFromUnitString($scope.freq) / 1000;
-		var endfreq = floatFromUnitString($scope.freq)*1000;
-		var tau2 = Math.pow(2*Math.PI*floatFromUnitString($scope.tau), 2);
-
-		//Find a good clean start frequency
-		startfreq=Math.pow(10, Math.floor(log10(startfreq)));
-	//	startfreq=Math.min(startfreq, 1);
-
-		$scope.amplitude_bode.data[0].points = [];
-
-		for (var f = startfreq; f<endfreq; f *=1.2){
-			$scope.amplitude_bode.data[0].points.push({
-				'x':log10(f), 
-				'y':-10*log10(1+tau2*f*f)
-			});
-		}
-
-		$scope.amplitude_bode.xProperties.min = log10(startfreq);
-		$scope.amplitude_bode.xProperties.max = log10(endfreq);
-
-		$scope.amplitude_bode.yProperties.min = 20*log10(0.0001);
-		$scope.amplitude_bode.yProperties.max = 1;
-
-		$scope.amplitude_bode.yGrid = [];
-		for (var g = 0.1, gain = 20; g > 0.0001; g /= 10, gain +=20){
-			$scope.amplitude_bode.yGrid.push({
-				'label':'-'+gain+'dB',
-				'y':20*log10(g)
-			});
-		}
-
-		$scope.amplitude_bode.xGrid = [];
-		for (var f = startfreq; f<endfreq; f *=10){
-			for (var ff = f; ff<f*10; ff+=f){
-				$scope.amplitude_bode.xGrid.push({
-					'label':(ff==f)?unitStringfromFloat(f):'',
-					'x':log10(ff)
-				});
-			}
-		}
-
+		var f = floatFromUnitString($scope.freq);
+		var tau = floatFromUnitString($scope.tau);
+		ploxAmplitudeBode($scope.amplitude_bode, [1], [1, tau], f/1000, f*1000);
 	}
 
 
