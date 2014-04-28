@@ -12,7 +12,9 @@ angular.module('myApp.controllers', [])
 	$scope.r1 = "100k";
 	$scope.c1 = "20u";
 	$scope.tau="0";
-	
+
+	$scope.filterOptions = ["Low Pass", "High Pass"];
+	$scope.filterType = "High Pass";
 
 	$scope.constrain_r= true;
 	$scope.constrain_c= true;
@@ -208,7 +210,12 @@ angular.module('myApp.controllers', [])
 
 		var f = floatFromUnitString($scope.freq);
 		var tau = floatFromUnitString($scope.tau);
-		ploxAmplitudeBode($scope.amplitude_bode, [1], [1, tau], f/1000, f*1000);
+		if ($scope.filterType === "Low Pass"){
+			ploxAmplitudeBode($scope.amplitude_bode, [1], [1, tau], f/1000, f*1000);
+		}
+		else{
+			ploxAmplitudeBode($scope.amplitude_bode, [0,1], [1/tau, 1], f/1000, f*1000);
+		}
 	}
 
 

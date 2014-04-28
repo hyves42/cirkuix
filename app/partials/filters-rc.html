@@ -1,14 +1,12 @@
 
-<div class="btn-group">
-	<button class="active btn" type="button">Low pass</button>
-	<button id="show-html" class="btn" type="button">High pass</button>
-</div>
 
 <div class="row">
 	<div class="col-lg-6">
 		<h1>RC filter </h1>
 		<div class="thumbnail">
 			<form name="myForm" ng-submit="computeCircuit()">
+
+
 				<p>
 					<div class="form-group">
 						<label>R (&Omega;)</label>
@@ -112,22 +110,22 @@
 					</div>
 				</p>
 
+				<buttons-radio class="btn-group"
+					model="filterType"
+					options="filterOptions">
+				</buttons-radio>
 
-				<input type="submit" value="Compote"/>
-
-				<p>T: {{ tau_float }}</p>
-				<p>R1 : {{ r1 }}. C1 = {{ c1 }}</p>
-				<p>r1_float : {{ r1_float }}, c1_float : {{ c1_float }}</p>
-				<p>last constrain : {{last_constrain}}</p>
-
-
+				<input type="submit" class="btn" value="Compute !"/>
 
 			</form>
 		</div>
 	</div>
 	<div class="col-lg-6">
 		<div class="thumbnail">
-			<span ng-include="'img/filters-rc-lowpass.svg'"></span>
+			<span ng-switch='filterType'>
+				<span ng-switch-when="Low Pass"> <span ng-include="'img/filters-rc-lowpass.svg'"></span></span>
+				<span ng-switch-when="High Pass"> <span ng-include="'img/filters-rc-highpass.svg'"></span></span>
+			</span>
 		</div>
 
 		<div class="thumbnail">
