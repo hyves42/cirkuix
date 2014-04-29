@@ -7,7 +7,8 @@ angular.module('cirkuix', [
   'cirkuix.filters',
   'cirkuix.services',
   'cirkuix.directives',
-  'cirkuix.controllers',
+  'cirkuix.controllers.filters',
+  'cirkuix.controllers.pwm',  
   'plox'
 ]).
 config(['$routeProvider', function($routeProvider) {
