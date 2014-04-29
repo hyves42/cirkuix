@@ -5,7 +5,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
+angular.module('cirkuix.controllers', [])
   .controller('FiltersRC', ['$scope', function($scope) {
 
 

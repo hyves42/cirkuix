@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('cirkuix', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers',
+  'cirkuix.filters',
+  'cirkuix.services',
+  'cirkuix.directives',
+  'cirkuix.controllers',
   'plox'
 ]).
 config(['$routeProvider', function($routeProvider) {
