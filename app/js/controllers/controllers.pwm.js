@@ -6,5 +6,7 @@
 /* Controllers */
 
 angular.module('cirkuix.controllers.pwm', [])
-  .controller('trouduku', [function() {
-  }]);
+	.controller('pwmRC', [function() {
+	}])
+	.controller('pwmSallenKey', [function() {
+	}]);
